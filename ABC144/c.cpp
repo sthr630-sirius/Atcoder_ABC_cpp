@@ -22,7 +22,6 @@ int main(){
     
     }
 
-    cout << x << " " << y << endl;
     cout << (x-1)+(y-1) << endl;
 
     return 0;
