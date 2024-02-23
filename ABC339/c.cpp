@@ -1,18 +1,20 @@
 #include<iostream>
+#include<vector>
 using namespace std;
 int main(){
-    string s, ans;
-    cin >> s;
-    ans = "";
-    for (int i=s.size()-1; i>=0; i--){
-        if (s[i] != '.'){
-            ans = s[i]+ ans;
-        } else{
-            break;
-        }
-    }   
+    int n;
+    long long passenger;
+    cin >> n;
+    passenger = 0;
+    vector<long long> a(n);
+    for (int i=0; i<n; i++) cin >> a[i];
 
-    cout << ans << endl;
+    for (int i=0; i<n; i++){
+        passenger += a[i];
+        if (passenger < 0) passenger = 0;
+    }
+
+    cout << passenger << endl;
 
     return 0;
 
