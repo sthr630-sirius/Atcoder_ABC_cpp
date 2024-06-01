@@ -15,12 +15,8 @@ int main(){
 
     sort(name.begin(), name.end());
 
-    for (auto namei:name){
-        cout << namei << endl;
-    }
-
     cout << name[t%n] << endl;
-    
+
     return 0;
 
 }
