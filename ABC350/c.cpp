@@ -30,8 +30,6 @@ int main(){
             swap(B[swap_idx_a], B[swap_idx_b]);
             
             record.push_back({swap_idx_a, swap_idx_b});
-            //record.at(i-1).at(0) = swap_idx_a;
-            //record.at(i-1).at(1) = swap_idx_b;
             
             ans++;
         }
