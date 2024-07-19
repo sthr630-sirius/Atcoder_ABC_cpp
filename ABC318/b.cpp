@@ -7,7 +7,7 @@ int main(){
     int ans;
     int size_map;
     cin >> n;
-    size_map = 10;
+    size_map = 100;
     ans = 0;
 
     vector<vector<int>> map(size_map, vector<int>(size_map));
