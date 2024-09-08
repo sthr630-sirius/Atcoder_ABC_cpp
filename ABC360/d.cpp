@@ -2,6 +2,7 @@
 #include<algorithm>
 #include<vector>
 using namespace std;
+// not pass test case 2024.9.8
 int binary_search_lower(vector<int>& arr, int target){
     int l, r, m;
     l = -1;
