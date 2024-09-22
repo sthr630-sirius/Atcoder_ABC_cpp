@@ -2,82 +2,45 @@
 #include<algorithm>
 #include<vector>
 using namespace std;
-// not pass test case 2024.9.8
-int binary_search_lower(vector<int>& arr, int target){
-    int l, r, m;
-    l = -1;
-    r = arr.size();
-
-    while(r-l>1){
-        m = (l+r)/2;
-        if(target <= arr[m]){
-            r = m;
-        }else{
-            l = m;
-        }
-    }
-
-    return r;
-}
-
-int binary_search_upper(vector<int>& arr, int target){
-    int l, r, m;
-    l = -1;
-    r = arr.size();
-
-    while(r-l>1){
-        m = (l+r)/2;
-        if(arr[m] <= target){
-            l = m;
-        }else{
-            r = m;
-        }
-    }
-
-    return l;
-}
 
 int main(){
-    int n, t;
+    int n;
+    long long t;
     string s;
-    int target;
-    int l_idx, u_idx;
-    int ans;
+    int ans, j_min, j_max;
     cin >> n >> t;
     cin >> s;
-    vector<int> x(n);
-    vector<int> zero, one;
-    for(int i=0; i<n; i++) cin >> x[i];
+    vector<long long> x(n);
+    vector<long long> r_ant, l_ant;
 
+    for(int i=0; i<n; i++) cin >> x[i];
     for(int i=0; i<n; i++){
-        if(s[i] == '0') zero.push_back(x[i]);
-        if(s[i] == '1') one.push_back(x[i]);
+        if(s[i] == '1') r_ant.push_back(x[i]);
+        if(s[i] == '0') l_ant.push_back(x[i]);
     }
-    sort(zero.begin(), zero.end());
-    sort(one.begin(), one.end());
+
+    sort(r_ant.begin(), r_ant.end());
+    sort(l_ant.begin(), l_ant.end());
 
     ans = 0;
+    j_min = 0;
+    j_max = 0;
 
-    for(int i=0; i<n; i++){
-        if(s[i] == '0'){
-            if(x[i] >= one[0]){
-                u_idx = binary_search_upper(one, x[i]); 
-                l_idx = binary_search_lower(one, x[i]-2*t);
-               
-                ans += (u_idx - l_idx + 1);
-            }
-        }
-        if(s[i] == '1'){
-            if(x[i] <= zero[zero.size()-1]){
-                u_idx = binary_search_upper(zero, x[i]+2*t);
-                l_idx = binary_search_lower(zero, x[i]);
+    for(int i=0; i<r_ant.size(); i++){
+        //cout << "i: " << i << endl;
+        while(r_ant[i] > l_ant[j_min] && j_min < l_ant.size()) j_min++;
+        while(l_ant[j_max] <= r_ant[i] + 2*t && j_max < l_ant.size()) j_max++;
 
-                ans += (u_idx - l_idx + 1);
-            }
-        }
+        ans += (j_max - j_min);
+
+        //cout << "j_min: " << j_min << endl;
+        //cout << "j_max: " << j_max << endl; 
+        //cout << "ans: " << ans << endl;
+
     }
 
-    cout << ans/2 << endl;
+    cout << ans << endl;
 
     return 0;
+
 }
