@@ -3,6 +3,7 @@
         "ostream": "cpp",
         "tuple": "cpp",
         "compare": "cpp",
-        "version": "cpp"
+        "version": "cpp",
+        "iostream": "cpp"
     }
 }

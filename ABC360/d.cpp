@@ -7,7 +7,7 @@ int main(){
     int n;
     long long t;
     string s;
-    int ans, j_min, j_max;
+    long long ans, j_min, j_max;
     cin >> n >> t;
     cin >> s;
     vector<long long> x(n);
@@ -27,15 +27,10 @@ int main(){
     j_max = 0;
 
     for(int i=0; i<r_ant.size(); i++){
-        //cout << "i: " << i << endl;
         while(r_ant[i] > l_ant[j_min] && j_min < l_ant.size()) j_min++;
         while(l_ant[j_max] <= r_ant[i] + 2*t && j_max < l_ant.size()) j_max++;
 
         ans += (j_max - j_min);
-
-        //cout << "j_min: " << j_min << endl;
-        //cout << "j_max: " << j_max << endl; 
-        //cout << "ans: " << ans << endl;
 
     }
 
