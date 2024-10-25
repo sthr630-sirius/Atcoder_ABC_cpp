@@ -11,8 +11,6 @@ int main(){
     
     sx--;
     sy--;
-    
-    cout << sy << " " << sx << endl;
 
     vector<string> field(h);
 
