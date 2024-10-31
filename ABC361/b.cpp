@@ -9,6 +9,9 @@ int overlap_length(int a_l, int a_u, int b_l, int b_u){
     if(a_l <= b_l){
         if(a_u <= b_l) len = 0;
         else len = min(a_u, b_u) - b_l; 
+    }else{
+        if(b_u <= a_l) len = 0;
+        else len = min(b_u, a_u) - a_l;
     }
 
     return len;
