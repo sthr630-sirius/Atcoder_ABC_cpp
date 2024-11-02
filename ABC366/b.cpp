@@ -17,7 +17,6 @@ int main(){
     for(int i=0; i<n; i++){
         cin >> s[i];
         if(s[i].length() >= m) m = s[i].length();
-        //m = max(m, (int)s[i].length());
     }
 
     for(int i=0; i<n; i++){
