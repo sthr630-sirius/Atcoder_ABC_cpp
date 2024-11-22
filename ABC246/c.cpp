@@ -23,9 +23,9 @@ int main(){
 
     sort(a.rbegin(), a.rend());
 
-    cout << "k: " << k << endl;
-    for(auto ai:a) cout << ai << " ";
-    cout << endl;
+    //cout << "k: " << k << endl;
+    //for(auto ai:a) cout << ai << " ";
+    //cout << endl;
 
     ans = 0;
     for(int i=k; i<n; i++) ans += a[i];
