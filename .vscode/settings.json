@@ -4,6 +4,7 @@
         "tuple": "cpp",
         "compare": "cpp",
         "version": "cpp",
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "bitset": "cpp"
     }
 }
