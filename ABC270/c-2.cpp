@@ -3,7 +3,7 @@
 using namespace std;
 
 int x, y;
-vector<vector<int>> g(100);
+vector<vector<int>> g(2000000);
 vector<int> ans;
 
 bool dfs(int now_v, int parent_v){
