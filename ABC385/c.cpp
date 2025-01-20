@@ -8,7 +8,7 @@ int main(){
     vector<int> h(n);
     for(int i=0; i<n; i++) cin >> h[i];
 
-    //ans = 0;
+    ans = 1;
     for(int i=0; i<n; i++){
         for(int delta=1; delta<n; delta++){
             cnt = 0;
