@@ -9,7 +9,7 @@ int main(){
 
     int now_hight, cnt, ans;
 
-    ans = 0;
+    ans = 1;
     for(int delta=1; delta<n; delta++){
         for(int header=0; header<delta; header++){
             vector<int> target;
